@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Video Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-black text-white min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-md w-full bg-zinc-900 p-8 rounded-3xl shadow-2xl border border-zinc-800 text-center">
+        <h1 class="text-4xl font-black mb-2 bg-gradient-to-br from-cyan-400 to-blue-600 bg-clip-text text-transparent italic">
+            AI VIDEO
+        </h1>
+        <p class="text-zinc-500 mb-8 text-sm font-medium">Transform images into cinematic motion.</p>
+        
+        <div class="group relative border-2 border-dashed border-zinc-700 rounded-2xl p-12 mb-6 hover:border-cyan-500 transition-all bg-zinc-950">
+            <input type="file" id="upload" class="hidden" accept="image/*">
+            <label for="upload" class="cursor-pointer">
+                <span class="text-5xl block mb-3 group-hover:scale-110 transition-transform">✨</span>
+                <span class="text-zinc-400 font-bold uppercase text-xs tracking-widest">Select Photo</span>
+            </label>
+        </div>
+
+        <button onclick="startAI()" class="w-full bg-white text-black py-4 rounded-xl font-black uppercase tracking-widest hover:bg-cyan-500 hover:text-white transition-all shadow-xl active:scale-95">
+            Generate Now
+        </button>
+        
+        <div id="status" class="mt-6 text-cyan-400 hidden text-[10px] font-mono tracking-widest uppercase">
+            [ System: AI Node Ready... ]
+        </div>
+    </div>
+
+    <script>
+        function startAI() {
+            const status = document.getElementById('status');
+            status.classList.remove('hidden');
+            setTimeout(() => {
+                alert("Interface Ready! Step 2: Connection to AI API.");
+                status.classList.add('hidden');
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
